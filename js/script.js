@@ -129,6 +129,8 @@ $(function() {
     const castTarget = orderCat.map((cat) => {
         const { name, color, ribbon } = cat;
         console.log(name, color, ribbon)
+        $('#mailes-3 ul').append(listGenerator(cat.color, cat.name, cat.ribbon.color, cat.ribbon.opacity, ));
+
 
     })
 
