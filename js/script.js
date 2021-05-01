@@ -116,9 +116,26 @@ $(function() {
     //console.log(maleCats);
 
     maleCats.forEach((cat) => {
-        $('#mailes-3-male ul').append(listGenerator(cat.color, cat.name, cat.ribbon.color, cat.ribbon.opacity, ));
+            $('#mailes-2-male ul').append(listGenerator(cat.color, cat.name, cat.ribbon.color, cat.ribbon.opacity, ));
+
+        })
+        //
+        //mail3 unire in ordine priama le femmine e poi i maschi in un array
+        //genero un nuovo array con solo nome e colore e ribbon: colore - opacita e stamaparlo con il map
+
+    const orderCat = [...femaleCats, ...maleCats];
+    //console.log(orderCat);//ho clonato sia le femmine e i maschi
+
+    const castTarget = orderCat.map((cat) => {
+        const { name, color, ribbon } = cat;
+        console.log(name, color, ribbon)
 
     })
+
+
+
+
+
 
 
 
