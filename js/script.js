@@ -127,12 +127,25 @@ $(function() {
     //console.log(orderCat);//ho clonato sia le femmine e i maschi
 
     const castTarget = orderCat.map((cat) => {
+        //destrutturo  l'lelemneto cat per inizializzare le var name,color,ribbon
+
         const { name, color, ribbon } = cat;
-        console.log(name, color, ribbon)
-        $('#mailes-3 ul').append(listGenerator(cat.color, cat.name, cat.ribbon.color, cat.ribbon.opacity, ));
+
+        //stampo a video i valori in questo caso per stampare deve essere tra la destrutturazione e il return
+
+        $('#mailes-3 ul').append(listGenerator(color, name, ribbon.color, ribbon.opacity, ));
+
+        //
+
+        //ritorno l'oggetto con i valori della destrurrurazione
+        return { name, color, ribbon };
+
+
 
 
     })
+
+    console.log(castTarget);
 
 
 
