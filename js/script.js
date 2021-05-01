@@ -65,7 +65,7 @@ $(function() {
     cats.forEach((cat) => {
         //console.log(cat);
         //console.log(listGenerator(cat.color, cat.name))
-        $('#mailes-1').append(listGenerator(cat.color, cat.name));
+        $('#mailes-1 ul').append(listGenerator(cat.color, cat.name));
     })
 
     //mailes 2
@@ -83,18 +83,42 @@ $(function() {
         //console.log(opacity);
         return {
             ...cat, //clonato
-            ribbon: { //aggiunto
+            ribbon: { //aggiunto all'oggetto
                 color,
                 opacity
 
             }
 
-        };
+        }
 
+
+    });
+    //console.log(newCats);
+
+    //filtro il mio array ogg per femm e maschi
+
+    //femmine
+
+    const femaleCats = newCats.filter((cat) => cat.gender === 'female');
+    //console.log(femaleCats);
+    //maschi
+
+
+    //ciclo e stampo le gattine femmine
+    femaleCats.forEach((cat) => {
+        $('#mailes-2-female ul').append(listGenerator(cat.color, cat.name, cat.ribbon.color, cat.ribbon.opacity, ));
 
     })
-    console.log(newCats);
 
+    //cicolo e stampo i gattini maschi
+
+    const maleCats = newCats.filter((cat) => cat.gender === 'male');
+    //console.log(maleCats);
+
+    maleCats.forEach((cat) => {
+        $('#mailes-3-male ul').append(listGenerator(cat.color, cat.name, cat.ribbon.color, cat.ribbon.opacity, ));
+
+    })
 
 
 
@@ -112,11 +136,21 @@ $(function() {
 
 });
 //funzione per stama
-function listGenerator(catColor, name) {
+function listGenerator(catColor, name, ...ribbon) {
+
+    let ribbonTag = "";
+
+    if (ribbon.length > 0) {
+        ribbonTag = `<i class="fas fa-ribbon"
+                                style="color:${ribbon[0]};
+                                        opacity:${ribbon[1]}"> </i>  `
+
+    }
     //console.log(catColor, name);
     let html = `
     <li>
          <i class="fas fa-cat" style="color:${catColor}"></i>
+         ${ribbonTag}
         <span>${name}</span>
 
 
