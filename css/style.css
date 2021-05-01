@@ -1,9 +1,24 @@
 * {
+    border: 0;
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
+.acContainer {
+    width: 80%;
+    margin: 0 auto;
+}
+
 body {
-    background-color: #b5a3f1;
+    background-color: rgb(240, 110, 110);
+    font-family: 'New Tegomin', serif;
+}
+
+h1 {
+    font-size: 100px;
+}
+
+section li {
+    display: flex;
+    justify-content: space-around;
 }
