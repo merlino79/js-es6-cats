@@ -10,8 +10,10 @@
 }
 
 body {
-    background-color: rgb(240, 110, 110);
+    /* //background-color: rgb(240, 110, 110); */
     font-family: 'New Tegomin', serif;
+    /* background-image: url(/img/gatti_023.jpg); */
+    background-size: contain;
 }
 
 h1 {
@@ -21,7 +23,7 @@ h1 {
 
 section {
     margin-top: 50px;
-    background-color: rgba(31, 181, 82, 0.54);
+    background-color: rgba(76, 97, 83, 0.54);
     border-radius: 15px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
     cursor: pointer;
