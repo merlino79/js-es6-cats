@@ -41,13 +41,13 @@ $(function() {
         },
         {
             name: 'luna',
-            age: 1.5,
+            age: 0.5,
             color: '#A856E9',
             gender: 'female',
         },
         {
             name: 'tigre',
-            age: 1.5,
+            age: 5,
             color: '#C55873 ',
             gender: 'male',
         },
@@ -70,16 +70,30 @@ $(function() {
 
     //mailes 2
 
-    //map per il clone 
+
     const pink = "#ff00e6";
     const blue = "#0084ff";
+    //map per il clone 
 
     const newCats = cats.map((cat) => {
         //opratore termario per le condizioni if(?) se (:)
         let color = (cat.gender === 'female') ? pink : blue;
-        console.log(color);
+        //console.log(color);
+        let opacity = cat.age / 10; //dichiaro l'opacita e la divido per 10 //valorizzato la varibile
+        //console.log(opacity);
+        return {
+            ...cat, //clonato
+            ribbon: { //aggiunto
+                color,
+                opacity
+
+            }
+
+        };
+
 
     })
+    console.log(newCats);
 
 
 
